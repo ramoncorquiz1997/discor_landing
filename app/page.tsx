@@ -34,7 +34,7 @@ const SectionTitle = ({
 }) => (
   <div className="max-w-3xl mx-auto text-center space-y-3">
     {kicker && (
-      <p className="uppercase tracking-widest text-[10px] md:text-xs text-emerald-600/80 dark:text-emerald-400/80">
+      <p className="uppercase tracking-widest text-[10px] md:text-xs text-indigo-500/90 dark:text-indigo-300/90">
         {kicker}
       </p>
     )}
@@ -44,13 +44,13 @@ const SectionTitle = ({
 );
 
 const Card = ({ children }: { children: React.ReactNode }) => (
-  <div className="bg-white dark:bg-zinc-900/60 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-5 md:p-6 shadow-[0_0_0_1px_rgba(0,0,0,0.02)] dark:shadow-[0_0_0_1px_rgba(255,255,255,0.02)] hover:shadow-[0_0_0_1px_rgba(22,163,74,0.25)] transition-all">
+  <div className="bg-white dark:bg-zinc-900/60 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-5 md:p-6 shadow-[0_0_0_1px_rgba(0,0,0,0.02)] dark:shadow-[0_0_0_1px_rgba(255,255,255,0.02)] hover:shadow-[0_0_0_1px_rgba(79,70,229,0.25)] transition-all">
     {children}
   </div>
 );
 
 const Pill = ({ children }: { children: React.ReactNode }) => (
-  <span className="px-2 py-1 rounded-full bg-emerald-100/60 text-emerald-700 border border-emerald-600/20 dark:bg-emerald-400/10 dark:text-emerald-300 dark:border-emerald-500/20 text-[10px] md:text-xs tracking-wide">
+  <span className="px-2 py-1 rounded-full bg-indigo-100/70 text-indigo-700 border border-indigo-500/30 dark:bg-indigo-500/10 dark:text-indigo-200 dark:border-indigo-400/30 text-[10px] md:text-xs tracking-wide">
     {children}
   </span>
 );
@@ -59,10 +59,10 @@ export default function DiscorGrupo() {
   return (
     <main className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
       {/* Header */}
-      <header className="sticky top-0 z-50 backdrop-blur bg-white/80 dark:bg-black/30 border-b border-zinc-200 dark:border-zinc-800 shadow-[0_1px_0_0_rgba(0,0,0,0.04)] dark:shadow-none">
+      <header className="sticky top-0 z-50 backdrop-blur bg-white/85 dark:bg-black/40 border-b border-zinc-200 dark:border-zinc-800 shadow-[0_1px_0_0_rgba(0,0,0,0.04)] dark:shadow-none">
         <div className="max-w-7xl mx-auto px-4 md:px-6 py-3 md:py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="size-8 md:size-9 grid place-items-center rounded-lg bg-gradient-to-br from-emerald-500 to-emerald-700 text-black font-bold">
+            <div className="size-9 md:size-10 grid place-items-center rounded-xl bg-gradient-to-br from-indigo-500 to-indigo-700 text-white font-bold tracking-tight">
               D
             </div>
             <div className="leading-tight">
@@ -78,7 +78,7 @@ export default function DiscorGrupo() {
           <nav className="hidden md:flex items-center gap-6">
             <NavLink href="#hub">Hub</NavLink>
             <NavLink href="#services">Divisiones</NavLink>
-            <NavLink href="#metricas">Métricas</NavLink>
+            <NavLink href="#metricas">Alcance</NavLink>
             <NavLink href="#clients">Filiales & aliados</NavLink>
             <NavLink href="#contact">Contacto</NavLink>
           </nav>
@@ -86,7 +86,7 @@ export default function DiscorGrupo() {
           <div className="flex items-center gap-2">
             <a
               href="#contact"
-              className="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-emerald-500 text-black font-medium hover:bg-emerald-400 transition"
+              className="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-indigo-500 text-white font-medium hover:bg-indigo-400 transition"
             >
               Contactar al grupo
             </a>
@@ -97,26 +97,29 @@ export default function DiscorGrupo() {
 
       {/* Hero / Hub */}
       <section id="hub" className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(60%_60%_at_50%_10%,rgba(16,185,129,0.12)_0%,transparent_60%)]" />
-        <div className="max-w-7xl mx-auto px-4 md:px-6 py-16 md:py-24 grid lg:grid-cols-2 gap-10 items-center">
-          <div className="space-y-6">
+        {/* Banda diagonal azul de fondo */}
+        <div className="pointer-events-none absolute inset-0">
+          <div className="absolute -top-32 -right-24 h-80 w-80 md:h-[420px] md:w-[420px] bg-gradient-to-br from-indigo-500/20 via-indigo-400/10 to-transparent rounded-3xl blur-3xl" />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 md:px-6 py-16 md:py-24 grid lg:grid-cols-[1.2fr_1fr] gap-12 items-center">
+          <div className="space-y-7 relative z-10">
             <FadeIn>
               <Pill>Grupo empresarial • Ensenada, B.C. • Soluciones integrales</Pill>
             </FadeIn>
 
             <FadeIn delay={0.05}>
-              <h1 className="text-3xl md:text-6xl font-semibold leading-tight text-[var(--foreground)]">
-                Soluciones integrales para la{" "}
-                <span className="text-emerald-600 dark:text-emerald-400">industria</span> y la{" "}
-                <span className="text-emerald-600 dark:text-emerald-400">cadena de valor</span>
+              <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold leading-tight text-[var(--foreground)]">
+                Un grupo, cinco divisiones,{" "}
+                <span className="text-indigo-600 dark:text-indigo-400">una misma columna vertebral</span>.
               </h1>
             </FadeIn>
 
             <FadeIn delay={0.1}>
               <p className="text-zinc-600 dark:text-zinc-400 text-base md:text-lg max-w-xl">
-                GRUPO DISCOR es el nexo de innovación y servicio en Ensenada, B.C. Unimos maquinaria,
-                logística, minerales, alimentos y tecnología para ofrecer soluciones completas de{" "}
-                <strong>“mina a puerto y de patio a dato”</strong>.
+                GRUPO DISCOR es el nexo de innovación y servicio en Ensenada, B.C. Unimos{" "}
+                <strong>maquinaria, minerales, logística, alimentos y software</strong> para construir soluciones
+                completas, desde la operación en campo hasta la toma de decisión.
               </p>
             </FadeIn>
 
@@ -124,15 +127,15 @@ export default function DiscorGrupo() {
               <div className="flex flex-wrap gap-3">
                 <a
                   href="#services"
-                  className="px-5 py-3 rounded-xl bg-emerald-500 text-black font-medium hover:bg-emerald-400 transition"
+                  className="px-5 py-3 rounded-xl bg-indigo-500 text-white font-medium hover:bg-indigo-400 transition"
                 >
                   Ver divisiones del grupo
                 </a>
                 <a
-                  href="#metricas"
-                  className="px-5 py-3 rounded-xl border border-zinc-300 hover:bg-zinc-50 dark:border-zinc-800 dark:hover:border-zinc-700"
+                  href="#about"
+                  className="px-5 py-3 rounded-xl border border-zinc-300 hover:bg-zinc-50 dark:border-zinc-800 dark:hover:border-zinc-800/70 text-sm"
                 >
-                  Revisar métricas
+                  Conocer el hub de valor
                 </a>
               </div>
             </FadeIn>
@@ -146,61 +149,64 @@ export default function DiscorGrupo() {
             </FadeIn>
           </div>
 
-          {/* Hero Visual */}
+          {/* Hero Visual distinto al de Development */}
           <FadeIn delay={0.12}>
-            <div className="relative">
-              <div className="aspect-[4/3] rounded-3xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-gradient-to-b dark:from-zinc-900 dark:to-black p-6">
-                <div className="grid grid-cols-6 gap-2 h-full">
-                  {/* Mosaico tipo “portafolio” de divisiones */}
-                  {[
-                    "Arrendadora",
-                    "Distribuidora",
-                    "Pétreos",
-                    "Logística",
-                    "Software",
-                    "Ensenada",
-                    "Mina a puerto",
-                    "Freight",
-                    "Maquinaria",
-                    "Minerales",
-                    "Alimentos",
-                    "Simuladores",
-                    "IA",
-                    "Operación",
-                    "Patio 7,000 m²",
-                    "Exportación",
-                    "Importación",
-                    "Baja California",
-                  ].map((label, i) => (
-                    <div
-                      key={i}
-                      className="rounded-xl border border-zinc-200 bg-white dark:border-zinc-800/60 dark:bg-zinc-900/50 text-[9px] md:text-[10px] flex items-center justify-center text-zinc-500 dark:text-zinc-400 text-center px-1"
-                    >
-                      {label}
+            <div className="relative z-10">
+              <Card>
+                <div className="space-y-5">
+                  <div className="flex items-center justify-between gap-4">
+                    <div>
+                      <p className="text-xs uppercase tracking-wide text-zinc-500">Hub operativo</p>
+                      <p className="text-lg font-semibold text-[var(--foreground)]">
+                        Ensenada, Baja California
+                      </p>
                     </div>
-                  ))}
-                </div>
-                <div className="absolute -bottom-3 -right-3 rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white/90 dark:bg-black p-3 shadow-sm dark:shadow">
-                  <div className="text-[10px] text-zinc-500 dark:text-zinc-400">Divisiones</div>
-                  <div className="flex gap-2 mt-1 text-xs flex-wrap max-w-[260px]">
-                    {["Arrendadora", "Pétreos", "Distribuidora", "Logística", "Software"].map((s) => (
-                      <span
-                        key={s}
-                        className="px-2 py-1 rounded-lg bg-zinc-100 border border-zinc-200 dark:bg-zinc-900 dark:border-zinc-800"
-                      >
-                        {s}
+                    <span className="px-3 py-1 rounded-full text-[10px] font-medium bg-indigo-50 text-indigo-700 dark:bg-indigo-500/10 dark:text-indigo-200 border border-indigo-100 dark:border-indigo-500/30">
+                      Patio 7,000 m²
+                    </span>
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="rounded-xl border border-zinc-200 dark:border-zinc-800 p-3 flex flex-col gap-1">
+                      <span className="text-[10px] uppercase text-zinc-500">Operación</span>
+                      <span className="text-sm font-medium text-[var(--foreground)]">
+                        Arrendadora & Pétreos
                       </span>
-                    ))}
+                      <span className="text-xs text-zinc-600 dark:text-zinc-400">
+                        Maquinaria pesada, agregados y minerales clave.
+                      </span>
+                    </div>
+                    <div className="rounded-xl border border-zinc-200 dark:border-zinc-800 p-3 flex flex-col gap-1">
+                      <span className="text-[10px] uppercase text-zinc-500">Cadena logística</span>
+                      <span className="text-sm font-medium text-[var(--foreground)]">
+                        Mina ⟶ Puerto
+                      </span>
+                      <span className="text-xs text-zinc-600 dark:text-zinc-400">
+                        Freight transatlántico y transpacífico.
+                      </span>
+                    </div>
+                    <div className="rounded-xl border border-zinc-200 dark:border-zinc-800 p-3 flex flex-col gap-1 col-span-2">
+                      <span className="text-[10px] uppercase text-zinc-500">Orquestación digital</span>
+                      <span className="text-sm font-medium text-[var(--foreground)]">
+                        Desarrollo Software DISCOR
+                      </span>
+                      <span className="text-xs text-zinc-600 dark:text-zinc-400">
+                        Simuladores con IA, bases de datos y plataformas web para visualizar la operación completa.
+                      </span>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </Card>
             </div>
           </FadeIn>
         </div>
       </section>
 
       {/* Services / Divisiones */}
-      <section id="services" className="py-14 md:py-20 border-t border-zinc-200 dark:border-zinc-900">
+      <section
+        id="services"
+        className="py-16 md:py-20 border-t border-zinc-200 dark:border-zinc-900 bg-zinc-50/60 dark:bg-zinc-950"
+      >
         <div className="max-w-7xl mx-auto px-4 md:px-6 space-y-10">
           <SectionTitle
             kicker="Divisiones"
@@ -208,61 +214,90 @@ export default function DiscorGrupo() {
             subtitle="Cinco unidades especializadas que se conectan para ofrecer soluciones de punta a punta."
           />
           <Stagger>
-            <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-6">
-              {[
-                {
-                  t: "Arrendadora DISCOR",
-                  d: "Renta de maquinaria pesada de alto rendimiento para minería y construcción. Flota con monitoreo GPS y soporte técnico en sitio.",
-                  email: "arrendadora@discor.com.mx",
-                },
-                {
-                  t: "Distribuidora DISCOR",
-                  d: "Mariscos B.C., cortes de carne premium y refacciones originales Terex®. Portafolio de alimentos y refacciones estratégicas.",
-                  email: "distribuidora@discor.com.mx",
-                },
-                {
-                  t: "Pétreos y Minerales",
-                  d: "Arena, gravas, basaltos y minerales clave (cobre, hierro) con servicio logístico integrado “mina a puerto”.",
-                  email: "petreosyminerales@discor.com.mx",
-                },
-                {
-                  t: "Logística DISCOR",
-                  d: "Freight Forwarder transatlántico y transpacífico. Patio de maniobras de 7,000 m² en Ensenada para almacenaje y consolidación.",
-                  email: "logistica@discor.com.mx",
-                },
-                {
-                  t: "Desarrollo Software",
-                  d: "Bases de datos, mantenimiento web, apps móviles y simuladores industriales con IA para capacitación.",
-                  email: "desarrollosoftware@discor.com.mx",
-                },
-              ].map((c) => (
-                <Item key={c.t}>
-                  <Card>
-                    <div className="flex flex-col gap-3 h-full">
-                      <div className="size-10 rounded-xl bg-emerald-100/60 border border-emerald-600/20 dark:bg-emerald-400/10 dark:border-emerald-500/20" />
-                      <h3 className="text-lg font-medium text-[var(--foreground)]">{c.t}</h3>
-                      <p className="text-sm text-zinc-600 dark:text-zinc-400 flex-1">{c.d}</p>
-                      <a
-                        href={`mailto:${c.email}`}
-                        className="text-xs text-emerald-700 dark:text-emerald-300 hover:underline"
-                      >
-                        Escribir a {c.email} →
-                      </a>
+            <div className="grid lg:grid-cols-[1.2fr_1fr] gap-6 md:gap-8 items-start">
+              {/* Grid principal */}
+              <div className="grid sm:grid-cols-2 gap-4 md:gap-6">
+                {[
+                  {
+                    t: "Arrendadora DISCOR",
+                    d: "Renta de maquinaria pesada de alto rendimiento para minería y construcción. Flota con monitoreo GPS y soporte técnico en sitio.",
+                    email: "arrendadora@discor.com.mx",
+                  },
+                  {
+                    t: "Distribuidora DISCOR",
+                    d: "Mariscos B.C., cortes de carne premium y refacciones originales Terex®. Portafolio de alimentos y refacciones estratégicas.",
+                    email: "distribuidora@discor.com.mx",
+                  },
+                  {
+                    t: "Pétreos y Minerales DISCOR",
+                    d: "Arena, gravas, basaltos y minerales (cobre, hierro) con servicio logístico integrado “mina a puerto”.",
+                    email: "petreosyminerales@discor.com.mx",
+                  },
+                  {
+                    t: "Logística DISCOR",
+                    d: "Freight Forwarder transatlántico y transpacífico. Patio de maniobras de 7,000 m² en Ensenada para almacenaje y consolidación.",
+                    email: "logistica@discor.com.mx",
+                  },
+                ].map((c) => (
+                  <Item key={c.t}>
+                    <Card>
+                      <div className="flex flex-col gap-3 h-full">
+                        <div className="text-xs font-medium text-indigo-600 dark:text-indigo-300 uppercase tracking-wide">
+                          División
+                        </div>
+                        <h3 className="text-lg font-medium text-[var(--foreground)]">{c.t}</h3>
+                        <p className="text-sm text-zinc-600 dark:text-zinc-400 flex-1">{c.d}</p>
+                        <a
+                          href={`mailto:${c.email}`}
+                          className="text-xs text-indigo-700 dark:text-indigo-300 hover:underline"
+                        >
+                          Escribir a {c.email} →
+                        </a>
+                      </div>
+                    </Card>
+                  </Item>
+                ))}
+              </div>
+
+              {/* Columna destacada para software */}
+              <Item>
+                <Card>
+                  <div className="flex flex-col gap-3 h-full">
+                    <div className="text-xs font-medium text-indigo-600 dark:text-indigo-300 uppercase tracking-wide">
+                      Unidad tecnológica
                     </div>
-                  </Card>
-                </Item>
-              ))}
+                    <h3 className="text-xl font-semibold text-[var(--foreground)]">
+                      Desarrollo Software DISCOR
+                    </h3>
+                    <p className="text-sm text-zinc-600 dark:text-zinc-400">
+                      Bases de datos a medida, mantenimiento web, apps móviles y simuladores industriales con IA.
+                      La pieza que conecta la operación física con la información estratégica.
+                    </p>
+                    <ul className="text-sm text-zinc-700 dark:text-zinc-300 space-y-1">
+                      <li>• Simuladores de capacitación con IA.</li>
+                      <li>• Integración con sistemas de logística y arrendadora.</li>
+                      <li>• Paneles para visualizar toda la cadena de valor.</li>
+                    </ul>
+                    <a
+                      href="mailto:desarrollosoftware@discor.com.mx"
+                      className="mt-2 text-xs text-indigo-700 dark:text-indigo-300 hover:underline"
+                    >
+                      desarrollosoftware@discor.com.mx →
+                    </a>
+                  </div>
+                </Card>
+              </Item>
             </div>
           </Stagger>
         </div>
       </section>
 
       {/* About / Valores */}
-      <section id="about" className="py-14 md:py-20 border-t border-zinc-200 dark:border-zinc-900">
+      <section id="about" className="py-16 md:py-20 border-t border-zinc-200 dark:border-zinc-900">
         <div className="max-w-7xl mx-auto px-4 md:px-6 grid lg:grid-cols-2 gap-10 items-center">
           <FadeIn>
             <div className="space-y-4">
-              <SectionTitle kicker="Hub" title="Misión, visión y valores" />
+              <SectionTitle kicker="Hub del grupo" title="Misión, visión y valores" />
               <p className="text-zinc-600 dark:text-zinc-400 text-sm md:text-base">
                 GRUPO DISCOR integra cinco filiales especializadas que comparten la misma base:{" "}
                 <strong>innovación, servicio integral y comunicación</strong>. Nuestra misión es anticipar las
@@ -284,8 +319,8 @@ export default function DiscorGrupo() {
                   <div>
                     <div className="text-base font-semibold text-[var(--foreground)]">Innovación</div>
                     <p className="text-sm text-zinc-600 dark:text-zinc-400">
-                      Anticipamos el mercado con soluciones como simuladores con IA, monitoreo GPS y aplicaciones
-                      a la medida.
+                      Simuladores con IA, monitoreo GPS, aplicaciones a la medida y una visión de datos para toda la
+                      operación.
                     </p>
                   </div>
                 </div>
@@ -296,8 +331,8 @@ export default function DiscorGrupo() {
                   <div>
                     <div className="text-base font-semibold text-[var(--foreground)]">Servicio integral</div>
                     <p className="text-sm text-zinc-600 dark:text-zinc-400">
-                      Desde la maquinaria y los minerales hasta la logística internacional y el software que
-                      orquesta todo.
+                      Desde la maquinaria y los minerales hasta la logística internacional y el software que orquesta
+                      todo.
                     </p>
                   </div>
                 </div>
@@ -318,20 +353,23 @@ export default function DiscorGrupo() {
         </div>
       </section>
 
-      {/* Métricas / Work */}
-      <section id="metricas" className="py-14 md:py-20 border-t border-zinc-200 dark:border-zinc-900">
+      {/* Métricas / Alcance */}
+      <section
+        id="metricas"
+        className="py-16 md:py-20 border-t border-zinc-200 dark:border-zinc-900 bg-zinc-50/80 dark:bg-zinc-950"
+      >
         <div className="max-w-7xl mx-auto px-4 md:px-6 space-y-10">
           <SectionTitle
-            kicker="Métricas"
+            kicker="Alcance"
             title="Escala operativa del grupo"
-            subtitle="Datos simulados que ilustran el alcance y la distribución de ingresos de GRUPO DISCOR."
+            subtitle="Indicadores clave que resumen el tamaño y la profundidad operativa de GRUPO DISCOR."
           />
 
           {/* KPIs */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
             <Card>
               <div className="text-center space-y-2">
-                <div className="text-3xl md:text-4xl font-extrabold text-emerald-600">5+</div>
+                <div className="text-3xl md:text-4xl font-extrabold text-indigo-600">5+</div>
                 <div className="text-xs uppercase font-semibold text-zinc-500">
                   Divisiones interconectadas
                 </div>
@@ -339,7 +377,7 @@ export default function DiscorGrupo() {
             </Card>
             <Card>
               <div className="text-center space-y-2">
-                <div className="text-3xl md:text-4xl font-extrabold text-emerald-600">150+</div>
+                <div className="text-3xl md:text-4xl font-extrabold text-indigo-600">150+</div>
                 <div className="text-xs uppercase font-semibold text-zinc-500">
                   Equipos de maquinaria
                 </div>
@@ -347,7 +385,7 @@ export default function DiscorGrupo() {
             </Card>
             <Card>
               <div className="text-center space-y-2">
-                <div className="text-3xl md:text-4xl font-extrabold text-emerald-600">7,000 m²</div>
+                <div className="text-3xl md:text-4xl font-extrabold text-indigo-600">7,000 m²</div>
                 <div className="text-xs uppercase font-semibold text-zinc-500">
                   Patio de maniobras Ensenada
                 </div>
@@ -355,7 +393,7 @@ export default function DiscorGrupo() {
             </Card>
             <Card>
               <div className="text-center space-y-2">
-                <div className="text-3xl md:text-4xl font-extrabold text-emerald-600">98%</div>
+                <div className="text-3xl md:text-4xl font-extrabold text-indigo-600">98%</div>
                 <div className="text-xs uppercase font-semibold text-zinc-500">
                   Satisfacción de clientes
                 </div>
@@ -363,49 +401,22 @@ export default function DiscorGrupo() {
             </Card>
           </div>
 
-          {/* Distribución de ingresos (mock) + proyectos */}
+          {/* Cómo se conecta el grupo + casos */}
           <div className="grid lg:grid-cols-2 gap-8 md:gap-10 items-start">
             <Card>
               <div className="space-y-3">
                 <h3 className="text-lg md:text-xl font-semibold text-[var(--foreground)]">
-                  Distribución de ingresos por división (mock)
+                  Cómo se conecta el grupo
                 </h3>
                 <p className="text-sm md:text-base text-zinc-600 dark:text-zinc-400">
-                  A nivel ilustrativo, la Arrendadora y Pétreos concentran la mayor parte de los ingresos del grupo,
-                  mientras que Distribuidora da estabilidad y Logística y Software crecen como unidades de alto
-                  valor estratégico.
+                  La ventaja del grupo no está solo en cada división por separado, sino en cómo se ensamblan:
+                  arrendadora alimenta proyectos de obra, pétreos y minerales suministran materia prima, logística
+                  mueve la carga y software hace visible todo el sistema.
                 </p>
                 <ul className="text-sm text-zinc-700 dark:text-zinc-300 space-y-1 mt-2">
-                  <li>
-                    <span className="font-semibold text-emerald-600 dark:text-emerald-400">
-                      • Arrendadora:
-                    </span>{" "}
-                    45% del ingreso estimado.
-                  </li>
-                  <li>
-                    <span className="font-semibold text-emerald-600 dark:text-emerald-400">
-                      • Pétreos y Minerales:
-                    </span>{" "}
-                    30% del ingreso estimado.
-                  </li>
-                  <li>
-                    <span className="font-semibold text-emerald-600 dark:text-emerald-400">
-                      • Distribuidora:
-                    </span>{" "}
-                    15% del ingreso estimado.
-                  </li>
-                  <li>
-                    <span className="font-semibold text-emerald-600 dark:text-emerald-400">
-                      • Logística:
-                    </span>{" "}
-                    7% del ingreso estimado.
-                  </li>
-                  <li>
-                    <span className="font-semibold text-emerald-600 dark:text-emerald-400">
-                      • Software:
-                    </span>{" "}
-                    3% del ingreso estimado.
-                  </li>
+                  <li>• Proyectos donde la maquinaria y los minerales se coordinan desde un mismo patio.</li>
+                  <li>• Operaciones “mina a puerto” con seguimiento logístico continuo.</li>
+                  <li>• Herramientas digitales para simular escenarios y capacitar personal.</li>
                 </ul>
               </div>
             </Card>
@@ -484,7 +495,7 @@ export default function DiscorGrupo() {
       </section>
 
       {/* Contact */}
-      <section id="contact" className="py-14 md:py-20 border-t border-zinc-200 dark:border-zinc-900">
+      <section id="contact" className="py-16 md:py-20 border-t border-zinc-200 dark:border-zinc-900">
         <div className="max-w-5xl mx-auto px-4 md:px-6 space-y-10">
           <SectionTitle
             kicker="Contacto"
@@ -520,7 +531,7 @@ export default function DiscorGrupo() {
                     </div>
                     <a
                       href={`mailto:${c.email}`}
-                      className="text-xs md:text-sm text-emerald-700 dark:text-emerald-300 hover:underline"
+                      className="text-xs md:text-sm text-indigo-700 dark:text-indigo-300 hover:underline"
                     >
                       {c.email}
                     </a>
@@ -529,25 +540,25 @@ export default function DiscorGrupo() {
               ))}
             </div>
 
-            {/* Formulario simple para contacto general si quieres mantenerlo */}
+            {/* Formulario simple para contacto general */}
             <form className="mt-10 grid md:grid-cols-2 gap-4">
               <input
                 placeholder="Nombre"
-                className="w-full rounded-xl bg-white border border-zinc-300 text-zinc-900 placeholder:text-zinc-400 outline-none focus:border-emerald-500/50 dark:bg-zinc-900 dark:border-zinc-800 dark:text-zinc-100"
+                className="w-full rounded-xl bg-white border border-zinc-300 text-zinc-900 placeholder:text-zinc-400 outline-none focus:border-indigo-500/60 dark:bg-zinc-900 dark:border-zinc-800 dark:text-zinc-100"
               />
               <input
                 placeholder="Correo"
                 type="email"
-                className="w-full rounded-xl bg-white border border-zinc-300 text-zinc-900 placeholder:text-zinc-400 outline-none focus:border-emerald-500/50 dark:bg-zinc-900 dark:border-zinc-800 dark:text-zinc-100"
+                className="w-full rounded-xl bg-white border border-zinc-300 text-zinc-900 placeholder:text-zinc-400 outline-none focus:border-indigo-500/60 dark:bg-zinc-900 dark:border-zinc-800 dark:text-zinc-100"
               />
               <input
                 placeholder="División de interés (opcional)"
-                className="w-full rounded-xl bg-white border border-zinc-300 text-zinc-900 placeholder:text-zinc-400 outline-none focus:border-emerald-500/50 md:col-span-2 dark:bg-zinc-900 dark:border-zinc-800 dark:text-zinc-100"
+                className="w-full rounded-xl bg-white border border-zinc-300 text-zinc-900 placeholder:text-zinc-400 outline-none focus:border-indigo-500/60 md:col-span-2 dark:bg-zinc-900 dark:border-zinc-800 dark:text-zinc-100"
               />
               <textarea
                 placeholder="Cuéntanos brevemente tu necesidad (maquinaria, logística, minerales, alimentos, software, etc.)"
                 rows={5}
-                className="w-full rounded-xl bg-white border border-zinc-300 text-zinc-900 placeholder:text-zinc-400 outline-none focus:border-emerald-500/50 md:col-span-2 dark:bg-zinc-900 dark:border-zinc-800 dark:text-zinc-100"
+                className="w-full rounded-xl bg-white border border-zinc-300 text-zinc-900 placeholder:text-zinc-400 outline-none focus:border-indigo-500/60 md:col-span-2 dark:bg-zinc-900 dark:border-zinc-800 dark:text-zinc-100"
               />
               <div className="md:col-span-2 flex items-center justify-between">
                 <div className="text-xs text-zinc-600 dark:text-zinc-500">
@@ -555,7 +566,7 @@ export default function DiscorGrupo() {
                 </div>
                 <button
                   type="submit"
-                  className="px-5 py-3 rounded-xl bg-emerald-500 text-black font-medium hover:bg-emerald-400 transition"
+                  className="px-5 py-3 rounded-xl bg-indigo-500 text-white font-medium hover:bg-indigo-400 transition"
                 >
                   Enviar
                 </button>

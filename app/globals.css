@@ -6,8 +6,10 @@
   /* LIGHT por defecto */
   --background: #ffffff;
   --foreground: #0a0a0a;
-  --primary: #16a34a;
-  --secondary: #22c55e;
+
+  /* Azul / Indigo como primario */
+  --primary: #4f46e5;   /* indigo-600 */
+  --secondary: #6366f1; /* indigo-500/600 mix */
 }
 
 /* DARK override: aplica directamente sobre <html class="dark"> */
@@ -16,7 +18,10 @@
   --foreground: #ededed;
 }
 
-html, body { height: 100%; }
+html,
+body {
+  height: 100%;
+}
 
 body {
   color: var(--foreground);
