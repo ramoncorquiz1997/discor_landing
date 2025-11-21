@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* LIGHT por defecto */
+  --background: #ffffff;
+  --foreground: #0a0a0a;
+  --primary: #16a34a;
+  --secondary: #22c55e;
+}
+
+/* DARK override: aplica directamente sobre <html class="dark"> */
+.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+}
+
+html, body { height: 100%; }
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  @apply max-w-7xl mx-auto px-4 md:px-6;
+}
